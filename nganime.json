@@ -1,11 +1,14 @@
 [
   {
-    "version":"1.2.1",
+    "version":"1.5.7",
     "tnc":"",
     "notuptodatemessage":"App version is not up-to-date, please update the app",
     "message":"New Version Release Notice : New version will be released on 28/07/2021",
-    "time":"1626848135",
-    "link":"",
-    "changelog":"Changelog: \nDatabase Updated"
+    "time":"1626853514",
+    "link":"https://github.com/niranjangirhe/readableDatabase/raw/main/app-release.apk",
+    "changelog":"Changelog: \nDatabase Updated",
+    "description":"NG Anime v1.5.7",
+    "title":"NG Anime",
+    "filename":"NG Anime v1.5.7.apk"
   }
 ]
