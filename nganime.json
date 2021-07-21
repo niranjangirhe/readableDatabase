@@ -1,10 +1,10 @@
 [
   {
-    "version":"1.9.3",
+    "version":"2.0.1",
     "tnc":"",
     "notuptodatemessage":"App version is not up-to-date, please update the app",
     "message":"New Version Release Notice : New version (V2.0.1) will be released on 21/07/2021 3:00 pm IST",
-    "time":"1626858750",
+    "time":"",
     "link":"https://github.com/niranjangirhe/readableDatabase/raw/main/app-release.apk",
     "changelog":"Changelog: \nVersion manager\nWatch later feature\nKeep Eye feature, will keep eye for new episodes\nCurrently watch video tracking\nOptimation up to 200% faster\nAnime Plot Display\nAnime next and previous buttons in video player screen",
     "description":"NG Anime v2.0.1",
