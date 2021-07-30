@@ -1,12 +1,12 @@
 [
    {
-    "version":"2.8.0",
+    "version":"2.9.0",
     "tnc":"Disclamer<br>-------------------------<br>NGAnime is not a commercial product but just an educational project, we do not promote any form of piracy. NGAnime only exists as an example of Android App development in a particular domain. We do not promote any misuse of this app or website and we won’t be responsible for any misuse of NGAnime. We do not claim any ownership of the content presented on the website and the app, The content is presented by an anonymous website of which NGAnime does not have any relations or control.<br><br><br>If you click On 'I Agree', you acknowledge the above fact and that you agree to our <a href=https://nganimes.firebaseapp.com/terms-conditions.html>Terms of service</a> and implies that you have read our <a href=https://nganimes.firebaseapp.com/privacy-policy.html>Privacy Policy<a>",
     "notuptodatemessage":"App version is not up-to-date, please update the app",
-    "message":"Thank you for your huge support!!!\n\nI am really happy to read your comments and replies, and I am working on the suggestions many of you gave me. A new update with all these suggestions will be released soon :)\n\nThank you\n- Niranjan",
-    "time":"1627580706",
-    "meme":"https://instagram.fpnq11-1.fna.fbcdn.net/v/t51.2885-15/e35/226379974_6134762576548959_2019777754918800465_n.jpg?_nc_ht=instagram.fpnq11-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=yHCZffJ83ecAX_7MBCD&edm=AABBvjUBAAAA&ccb=7-4&oh=aab72946353be5117616afc800ea0090&oe=6109CC47&_nc_sid=83d603",
+    "message":"Meme of a Day",
+    "time":"1627650935",
+    "meme":"https://instagram.fpnq11-1.fna.fbcdn.net/v/t51.2885-15/e35/210881521_127747069475938_5247445633880445983_n.jpg?se=7&_nc_ht=instagram.fpnq11-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=d8oMi5e84K4AX93uDSS&edm=AABBvjUBAAAA&ccb=7-4&oh=a4039af07afe804a5259772484188ec6&oe=610A05E8&_nc_sid=83d603",
     "link":"https://nganimes.firebaseapp.com/download.html",
-    "changelog":"Changelog:\n-------------------------\n* APK Splited as per CPU arch\n* Optimization\n* APK size reduced by 70%\n* Chip Style Navigation Bar\n* Added Tutorials\n* External Download Manager\n* Fixed Over Caching problem\n* Added Terms of conditions and privacy policy\n* Website major update"
+    "changelog":"Changelog:\n-------------------------\n*Introducing Meme of a day\n* Added Genre\n* Optimization\n* Added dynamic Dialogs for error\n* Fixed some anime opening issue"
   }
 ]
