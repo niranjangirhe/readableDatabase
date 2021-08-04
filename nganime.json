@@ -7,6 +7,6 @@
     "time":"1628098568",
     "meme":"https://i.pinimg.com/originals/a9/f7/91/a9f791204e906e3b0ab9445ecbc3b49e.jpg",
     "link":"https://nganimes.firebaseapp.com/download.html",
-    "changelog":"Changelog:\n-------------------------\n* Added Download Anime option\n* Added Watch trailer from youtube feature\n* Added share app option\n* Fixed full screen glitch in video player\n* Removed download option from player\n* Fixed layout in video player screen\n* Improved execption/error handling"
+    "changelog":"Changelog:\n-------------------------\n* Added Download Anime option\n* Added Watch trailer from youtube feature\n* Added share app option\n* Fixed full screen glitch in video player\n* Removed download option from player\n* Fixed layout in video player screen\n* Fixed Search suggestion glitch after searched\n* Improved execption/error handling"
   }
 ]
