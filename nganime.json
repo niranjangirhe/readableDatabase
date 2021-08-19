@@ -3,9 +3,9 @@
     "version":"3.0.0",
     "tnc":"Disclamer<br>-------------------------<br>NGAnime is not a commercial product but just an educational project, we do not promote any form of piracy. NGAnime only exists as an example of Android App development in a particular domain. We do not promote any misuse of this app or website and we won’t be responsible for any misuse of NGAnime. We do not claim any ownership of the content presented on the website and the app, The content is presented by an anonymous website of which NGAnime does not have any relations or control.<br><br><br>If you click On 'I Agree', you acknowledge the above fact and that you agree to our <a href=https://nganimes.firebaseapp.com/terms-conditions.html>Terms of service</a> and implies that you have read our <a href=https://nganimes.firebaseapp.com/privacy-policy.html>Privacy Policy<a>",
     "notuptodatemessage":"App version is not up-to-date, please update the app",
-    "message":"Meme of a Day",
-    "time":"1628098568",
-    "meme":"https://i.pinimg.com/originals/a9/f7/91/a9f791204e906e3b0ab9445ecbc3b49e.jpg",
+    "message":"New Update will be realsed on 19.08.2021 3:00PM IST",
+    "time":"1629360611",
+    "meme":"",
     "link":"https://nganimes.firebaseapp.com/download.html",
     "changelog":"Changelog:\n-------------------------\n* Added Download Anime option\n* Added Watch trailer from youtube feature\n* Added share app option\n* Fixed full screen glitch in video player\n* Removed download option from player\n* Fixed layout in video player screen\n* Fixed Search suggestion glitch after searched\n* Improved execption/error handling"
   }
