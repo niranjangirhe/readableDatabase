@@ -4,11 +4,11 @@
     "supported":"3.3.0 3.3.1",
     "tnc":"Disclamer<br>-------------------------<br>NGAnime is not a commercial product but just an educational project, we do not promote any form of piracy. NGAnime only exists as an example of Android App development in a particular domain. We do not promote any misuse of this app or website and we won’t be responsible for any misuse of NGAnime. We do not claim any ownership of the content presented on the website and the app, The content is presented by an anonymous website of which NGAnime does not have any relations or control.<br><br><br>If you click On 'I Agree', you acknowledge the above fact and that you agree to our <a href=https://nganimes.firebaseapp.com/terms-conditions.html>Terms of service</a> and implies that you have read our <a href=https://nganimes.firebaseapp.com/privacy-policy.html>Privacy Policy<a>",
     "notuptodatemessage":"App version is not up-to-date, please update the app.\nVersion 3.3.1\nChangelog:\n-------------------------\n* Added resume player after closing device feature (Supported for few devices)\n* Improved Notice delivery system\n* Fixed keep eye feature upcoming animes\n* Added flexible update support\n* Default dark theme and added theme switcher in my stuff\n* Added haptics\n* Added copy anime name from title window feature\n* Fixed keep eye bug",
-    "message":"",
-    "time":"",
+    "message":"This is a major update over multiple features, So I haven't tested for long term so there might be few bugs. if you find any bug report <a herf='https://nganimes.firebaseapp.com/contactus.html'>here</a>",
+    "time":"1632996144",
     "meme":"",
     "button":"Okay",
-    "frequency":1,
+    "frequency":0,
     "link":"https://nganimes.firebaseapp.com/download.html",
     "changelog":"Changelog:\n-------------------------\n* Added resume player after closing device feature (Supported for few devices)\n* Improved Notice delivery system\n* Fixed keep eye feature upcoming animes\n* Added flexible update support\n* Default dark theme and added theme switcher in my stuff\n* Added haptics\n* Added copy anime name from title window feature\n* Fixed keep eye bug"
   }
