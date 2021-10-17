@@ -1,15 +1,15 @@
 [
   {
-    "version":"3.3.5",
-    "supported":"3.3.5",
-    "tnc":"Disclamer<br>-------------------------<br>NGAnime is not a commercial product but just an educational project, we do not promote any form of piracy. NGAnime only exists as an example of Android App development in a particular domain. We do not promote any misuse of this app or website and we won’t be responsible for any misuse of NGAnime. We do not claim any ownership of the content presented on the website and the app, The content is presented by an anonymous website of which NGAnime does not have any relations or control.<br><br><br>If you click On 'I Agree', you acknowledge the above fact and that you agree to our <a href=https://nganimes.firebaseapp.com/terms-conditions.html>Terms of service</a> and implies that you have read our <a href=https://nganimes.firebaseapp.com/privacy-policy.html>Privacy Policy<a>",
-    "notuptodatemessage":"App version is not up-to-date, please update the app.<br>Version 3.3.1<br>Changelog:<br>-------------------------<br>* Added resume player after closing device feature (Supported for few devices)<br>* Improved Notice delivery system<br>* Fixed keep eye feature upcoming animes<br>* Added flexible update support<br>* Default dark theme and added theme switcher in my stuff<br>* Added haptics<br>* Added copy anime name from title window feature<br>* Fixed keep eye bug",
-    "message":"This is a major update over multiple features. I haven't tested for the long term so there might be few bugs. if you find any bugs please report them <a href='https://nganimes.firebaseapp.com/contactus.html'>here</a> or visit our <a href='https://nganimes.firebaseapp.com/'>website</a>. It will be big help for me in improving this app further",
-    "time":"1632996150",
-    "meme":"",
-    "button":"Okay",
-    "frequency":1,
-    "link":"https://nganimes.firebaseapp.com/download.html",
-    "changelog":"Changelog:<br>-------------------------<br>* Added resume player after closing device feature (Supported for few devices)<br>* Improved Notice delivery system<br>* Fixed keep eye feature upcoming animes<br>* Added flexible update support<br>* Default dark theme and added theme switcher in my stuff<br>* Added haptics<br>* Added copy anime name from title window feature<br>* Fixed keep eye bug"
+    "version": "3.3.5",
+    "supported": "3.3.5",
+    "tnc": "Disclamer<br>-------------------------<br>NGAnime is not a commercial product but just an educational project, we do not promote any form of piracy. NGAnime only exists as an example of Android App development in a particular domain. We do not promote any misuse of this app or website and we won’t be responsible for any misuse of NGAnime. We do not claim any ownership of the content presented on the website and the app, The content is presented by an anonymous website of which NGAnime does not have any relations or control.<br><br><br>If you click On 'I Agree', you acknowledge the above fact and that you agree to our <a href=https://nganimes.firebaseapp.com/terms-conditions.html>Terms of service</a> and implies that you have read our <a href=https://nganimes.firebaseapp.com/privacy-policy.html>Privacy Policy<a>",
+    "notuptodatemessage": "App version is not up-to-date, please update the app.<br>Version 3.3.1<br>Changelog:<br>-------------------------<br>* Added resume player after closing device feature (Supported for few devices)<br>* Improved Notice delivery system<br>* Fixed keep eye feature upcoming animes<br>* Added flexible update support<br>* Default dark theme and added theme switcher in my stuff<br>* Added haptics<br>* Added copy anime name from title window feature<br>* Fixed keep eye bug",
+    "message": "Please review our revised privacy rules by clicking <a href=https://nganimes.firebaseapp.com/privacy-policy.html>here<a>.",
+    "time": "1632996190",
+    "meme": "",
+    "button": "I've read it",
+    "frequency": 1,
+    "link": "https://nganimes.firebaseapp.com/download.html",
+    "changelog": "Changelog:<br>-------------------------<br>* Added resume player after closing device feature (Supported for few devices)<br>* Improved Notice delivery system<br>* Fixed keep eye feature upcoming animes<br>* Added flexible update support<br>* Default dark theme and added theme switcher in my stuff<br>* Added haptics<br>* Added copy anime name from title window feature<br>* Fixed keep eye bug"
   }
 ]
