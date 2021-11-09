@@ -1,7 +1,7 @@
 {
-  "arm64":"https://github.com/niranjangirhe/readableDatabase/raw/main/Apk/NGAnimeV3.4.0-arm64.apk",
-  "arm32":"https://github.com/niranjangirhe/readableDatabase/raw/main/Apk/NGAnimeV3.4.0-arm32.apk",
-  "x64":"https://github.com/niranjangirhe/readableDatabase/raw/main/Apk/NGAnimeV3.4.0-x86_64(intel).apk",
-  "x":"https://github.com/niranjangirhe/readableDatabase/raw/main/Apk/NGAnimeV3.4.0-x86_32(intel).apk",
-  "universal":"https://github.com/niranjangirhe/readableDatabase/raw/main/Apk/NGAnimeV3.4.0-universal.apk"
+  "arm64":"https://github.com/niranjangirhe/readableDatabase/raw/main/Apk/NGAnimeV3.4.1-arm64.apk",
+  "arm32":"https://github.com/niranjangirhe/readableDatabase/raw/main/Apk/NGAnimeV3.4.1-arm32.apk",
+  "x64":"https://github.com/niranjangirhe/readableDatabase/raw/main/Apk/NGAnimeV3.4.1-x86_64(intel).apk",
+  "x":"https://github.com/niranjangirhe/readableDatabase/raw/main/Apk/NGAnimeV3.4.1-x86_32(intel).apk",
+  "universal":"https://github.com/niranjangirhe/readableDatabase/raw/main/Apk/NGAnimeV3.4.1-universal.apk"
 }
