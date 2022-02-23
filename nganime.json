@@ -7,7 +7,7 @@
     "message": "We are currently undergoing maintenance. The app may crash, but don't worry, we'll solve it as soon as possible. <br> Thank you.<br> NGAnimix team",
     "time": "1645000000",
     "meme": "",
-    "button": "",
+    "button": "Okay",
     "frequency": 0,
     "link": "https://nganimes.firebaseapp.com/download.html",
     "changelog": "Changelog:<br>-------------------------<br>* Database Shifted."
