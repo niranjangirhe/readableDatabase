@@ -116,7 +116,7 @@
           "format": "uri"
         },
         "gender": {
-          "type": "string"
+          "type": "integer"
         },
         "documentType": {
           "type": "integer"
