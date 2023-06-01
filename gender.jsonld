@@ -1,0 +1,25 @@
+{
+  "@context": [
+    {
+      "@version": 1.1,
+      "@protected": true,
+      "id": "@id",
+      "type": "@type",
+      "Gender": {
+        "@id": "https://raw.githubusercontent.com/niranjangirhe/readableDatabase/main/gender.jsonld#Gender",
+        "@context": {
+          "@version": 1.1,
+          "@protected": true,
+          "id": "@id",
+          "type": "@type",
+          "gender-vocab": "https://raw.githubusercontent.com/niranjangirhe/readableDatabase/main/gender.md#",
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "gender": {
+            "@id": "gender-vocab:gender",
+            "@type": "xsd:string"
+          }
+        }
+      }
+    }
+  ]
+}
