@@ -16,7 +16,7 @@
           "xsd": "http://www.w3.org/2001/XMLSchema#",
           "gender": {
             "@id": "gender-vocab:gender",
-            "@type": "xsd:string"
+            "@type": "xsd:integer"
           }
         }
         ,
