@@ -106,8 +106,7 @@
       "type": "object",
       "required": [
         "id",
-        "birthday",
-        "documentType"
+        "gender",
       ],
       "properties": {
         "id": {
@@ -117,9 +116,6 @@
         },
         "gender": {
           "type": "string"
-        },
-        "documentType": {
-          "type": "integer"
         }
       }
     }
