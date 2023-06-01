@@ -107,6 +107,7 @@
       "required": [
         "id",
         "gender",
+        "documentType"
       ],
       "properties": {
         "id": {
@@ -116,6 +117,9 @@
         },
         "gender": {
           "type": "string"
+        },
+        "documentType": {
+          "type": "integer"
         }
       }
     }
