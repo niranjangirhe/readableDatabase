@@ -9,14 +9,14 @@
                 "@context": {
                     "@propagate": true,
                     "@protected": true,
-                    "polygon-vocab": "urn:uuid:5f60acb5-97cf-4ea9-83b8-5d8e32f00227#",
+                    "polygon-vocab": "urn:uuid:fef99801-e900-43e6-8d41-fd56469a49a1#",
                     "xsd": "http://www.w3.org/2001/XMLSchema#",
                     "role": {
                         "@id": "polygon-vocab:role",
                         "@type": "xsd:string"
                     }
                 },
-                "@id": "urn:uuid:1fb12388-fb9d-4939-bb2e-af79d417a9af"
+                "@id": "urn:uuid:730f51b2-5f44-4c79-9307-248b11ee525e"
             }
         }
     ]
