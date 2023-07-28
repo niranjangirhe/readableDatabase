@@ -7,7 +7,7 @@
         "version": "1"
     },
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "description": "Schema for role",
+    "description": "Role of organization",
     "title": "Role",
     "properties": {
         "credentialSubject": {
@@ -15,12 +15,8 @@
             "title": "Credential subject",
             "properties": {
                 "role": {
-                    "description": "describes the role of organization",
-                    "enum": [
-                        "PRODUCER",
-                        "SUPPLIER"
-                    ],
-                    "title": "describes the role of organization",
+                    "description": "Describing role of organization",
+                    "title": "Describing role of organization",
                     "type": "string"
                 },
                 "id": {
@@ -30,9 +26,7 @@
                     "type": "string"
                 }
             },
-            "required": [
-                "role"
-            ],
+            "required": [],
             "type": "object"
         },
         "@context": {
