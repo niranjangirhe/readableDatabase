@@ -94,9 +94,4 @@
         "@context",
         "id",
         "issuanceDate",
-        "issuer",
-        "type",
-        "credentialSchema"
-    ],
-    "type": "object"
-}
+
