@@ -1,0 +1,2336 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Api gateway",
+    "description": "Api gateway",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://cpms.driivz.ubitricity.com:8103/api-gateway",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/v1/chargers/statuses/filter": {
+      "post": {
+        "tags": [
+          "Chargers"
+        ],
+        "summary": "Find charger status details by filter",
+        "description": "Find charger status details by filter",
+        "operationId": "filterChargerStatus",
+        "parameters": [
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": 20
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": 0
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "id:asc"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChargerStatusFilter"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChargerStatusResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ValidationResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/FieldValidationResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "wwfdIPhQ0y",
+                  "code": "api-gateway-403",
+                  "reason": "invalid.ticket",
+                  "message": "Invalid ticket",
+                  "httpStatusCode": 403
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "Cgkqv1kIDl",
+                  "code": "api-gateway-404",
+                  "reason": "entity.not.found",
+                  "message": "Entity not found",
+                  "httpStatusCode": 404,
+                  "errors": [
+                    {
+                      "code": "api-gateway-404",
+                      "reason": "billing.transaction.not.found",
+                      "message": "Billing transaction not found"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "GGOueIfHIJ",
+                  "code": "api-gateway-500",
+                  "reason": "internal.error",
+                  "message": "Unknown error",
+                  "httpStatusCode": 500,
+                  "errors": [
+                    {
+                      "code": "api-gateway-500",
+                      "reason": "internal.error",
+                      "message": "Unknown error"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "dmsTicket": []
+          }
+        ]
+      }
+    },
+    "/v1/chargers/{id}/status": {
+      "get": {
+        "tags": [
+          "Chargers"
+        ],
+        "summary": "Find charger status by id",
+        "description": "Get details of charger status by its id",
+        "operationId": "getChargerStatus",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChargerStatusResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "JQIwMeDDX0",
+                  "code": "api-gateway-403",
+                  "reason": "invalid.ticket",
+                  "message": "Invalid ticket",
+                  "httpStatusCode": 403
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "nac5J8XH3M",
+                  "code": "api-gateway-404",
+                  "reason": "entity.not.found",
+                  "message": "Entity not found",
+                  "httpStatusCode": 404,
+                  "errors": [
+                    {
+                      "code": "api-gateway-404",
+                      "reason": "billing.transaction.not.found",
+                      "message": "Billing transaction not found"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "Q26hqBttJD",
+                  "code": "api-gateway-500",
+                  "reason": "internal.error",
+                  "message": "Unknown error",
+                  "httpStatusCode": 500,
+                  "errors": [
+                    {
+                      "code": "api-gateway-500",
+                      "reason": "internal.error",
+                      "message": "Unknown error"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "dmsTicket": []
+          }
+        ]
+      }
+    },
+    "/v1/chargers/connectors/{connectorId}/remote-operations/unlock": {
+      "post": {
+        "tags": [
+          "Charger Remote Operations"
+        ],
+        "summary": "Send unlock message",
+        "description": "Send unlock message",
+        "operationId": "unlockConnector",
+        "parameters": [
+          {
+            "name": "connectorId",
+            "in": "path",
+            "description": "connectorId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RawOperationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ValidationResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/FieldValidationResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "W11nRttUjF",
+                  "code": "api-gateway-403",
+                  "reason": "invalid.ticket",
+                  "message": "Invalid ticket",
+                  "httpStatusCode": 403
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "AtMDCbj4GI",
+                  "code": "api-gateway-404",
+                  "reason": "entity.not.found",
+                  "message": "Entity not found",
+                  "httpStatusCode": 404,
+                  "errors": [
+                    {
+                      "code": "api-gateway-404",
+                      "reason": "billing.transaction.not.found",
+                      "message": "Billing transaction not found"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "ZZqRnsKV47",
+                  "code": "api-gateway-500",
+                  "reason": "internal.error",
+                  "message": "Unknown error",
+                  "httpStatusCode": 500,
+                  "errors": [
+                    {
+                      "code": "api-gateway-500",
+                      "reason": "internal.error",
+                      "message": "Unknown error"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "dmsTicket": []
+          }
+        ]
+      }
+    },
+    "/v1/chargers/connectors/{connectorId}/remote-operations/start-transaction": {
+      "post": {
+        "tags": [
+          "Charger Remote Operations"
+        ],
+        "summary": "Send start transaction message",
+        "description": "Send start transaction message",
+        "operationId": "startTransaction",
+        "parameters": [
+          {
+            "name": "connectorId",
+            "in": "path",
+            "description": "connectorId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 2
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartTransactionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RawOperationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ValidationResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/FieldValidationResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "uJA2fO6Gip",
+                  "code": "api-gateway-403",
+                  "reason": "invalid.ticket",
+                  "message": "Invalid ticket",
+                  "httpStatusCode": 403
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "iacoYNb1Du",
+                  "code": "api-gateway-404",
+                  "reason": "entity.not.found",
+                  "message": "Entity not found",
+                  "httpStatusCode": 404,
+                  "errors": [
+                    {
+                      "code": "api-gateway-404",
+                      "reason": "billing.transaction.not.found",
+                      "message": "Billing transaction not found"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "QuBfuwUBaC",
+                  "code": "api-gateway-500",
+                  "reason": "internal.error",
+                  "message": "Unknown error",
+                  "httpStatusCode": 500,
+                  "errors": [
+                    {
+                      "code": "api-gateway-500",
+                      "reason": "internal.error",
+                      "message": "Unknown error"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "dmsTicket": []
+          }
+        ]
+      }
+    },
+    "/v1/chargers/connectors/{connectorId}/remote-operations/stop-transaction": {
+      "patch": {
+        "tags": [
+          "Charger Remote Operations"
+        ],
+        "summary": "Send stop transaction message",
+        "description": "Send stop transaction message",
+        "operationId": "stopTransaction",
+        "parameters": [
+          {
+            "name": "connectorId",
+            "in": "path",
+            "description": "connectorId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 2
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StopTransactionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RawOperationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ValidationResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/FieldValidationResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "UeiXDX7Z9O",
+                  "code": "api-gateway-403",
+                  "reason": "invalid.ticket",
+                  "message": "Invalid ticket",
+                  "httpStatusCode": 403
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "G6f82379wU",
+                  "code": "api-gateway-404",
+                  "reason": "entity.not.found",
+                  "message": "Entity not found",
+                  "httpStatusCode": 404,
+                  "errors": [
+                    {
+                      "code": "api-gateway-404",
+                      "reason": "billing.transaction.not.found",
+                      "message": "Billing transaction not found"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "Uzlo5JGPj1",
+                  "code": "api-gateway-500",
+                  "reason": "internal.error",
+                  "message": "Unknown error",
+                  "httpStatusCode": 500,
+                  "errors": [
+                    {
+                      "code": "api-gateway-500",
+                      "reason": "internal.error",
+                      "message": "Unknown error"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "dmsTicket": []
+          }
+        ]
+      }
+    },
+    "/v1/ev-transactions/last": {
+      "post": {
+        "tags": [
+          "EV Transactions"
+        ],
+        "summary": "Find last ev transactions for chargers",
+        "description": "Find last ev transactions for chargers",
+        "operationId": "getLastEvTransactions",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChargersLastUsed"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvTransactionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ValidationResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/FieldValidationResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "AEUrYFPhI3",
+                  "code": "api-gateway-403",
+                  "reason": "invalid.ticket",
+                  "message": "Invalid ticket",
+                  "httpStatusCode": 403
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "XOUDegJLMB",
+                  "code": "api-gateway-404",
+                  "reason": "entity.not.found",
+                  "message": "Entity not found",
+                  "httpStatusCode": 404,
+                  "errors": [
+                    {
+                      "code": "api-gateway-404",
+                      "reason": "billing.transaction.not.found",
+                      "message": "Billing transaction not found"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "zo2kdqItrY",
+                  "code": "api-gateway-500",
+                  "reason": "internal.error",
+                  "message": "Unknown error",
+                  "httpStatusCode": 500,
+                  "errors": [
+                    {
+                      "code": "api-gateway-500",
+                      "reason": "internal.error",
+                      "message": "Unknown error"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "dmsTicket": []
+          }
+        ]
+      }
+    },
+    "/v1/ev-transactions/filter": {
+      "post": {
+        "tags": [
+          "EV Transactions"
+        ],
+        "summary": "Find EV transactions by filter",
+        "description": "Get details of EV transactions based on a given filter",
+        "operationId": "filterEvTransactions",
+        "parameters": [
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": 20
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": 0
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "id:asc"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EvTransactionFilter"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvTransactionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ValidationResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/FieldValidationResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "HIbj0F5apJ",
+                  "code": "api-gateway-403",
+                  "reason": "invalid.ticket",
+                  "message": "Invalid ticket",
+                  "httpStatusCode": 403
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "bAsjSeZXJP",
+                  "code": "api-gateway-404",
+                  "reason": "entity.not.found",
+                  "message": "Entity not found",
+                  "httpStatusCode": 404,
+                  "errors": [
+                    {
+                      "code": "api-gateway-404",
+                      "reason": "billing.transaction.not.found",
+                      "message": "Billing transaction not found"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "o5wRI0Y07y",
+                  "code": "api-gateway-500",
+                  "reason": "internal.error",
+                  "message": "Unknown error",
+                  "httpStatusCode": 500,
+                  "errors": [
+                    {
+                      "code": "api-gateway-500",
+                      "reason": "internal.error",
+                      "message": "Unknown error"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "dmsTicket": []
+          }
+        ]
+      }
+    },
+    "/v1/ev-transactions/{id}/cost": {
+      "get": {
+        "tags": [
+          "EV Transactions"
+        ],
+        "summary": "Get EV transaction cost",
+        "description": "Get EV transaction cost",
+        "operationId": "getEvTransactionCost",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvTransactionCost"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "y7phmYOTdh",
+                  "code": "api-gateway-403",
+                  "reason": "invalid.ticket",
+                  "message": "Invalid ticket",
+                  "httpStatusCode": 403
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "I7YsWHc9ZU",
+                  "code": "api-gateway-404",
+                  "reason": "entity.not.found",
+                  "message": "Entity not found",
+                  "httpStatusCode": 404,
+                  "errors": [
+                    {
+                      "code": "api-gateway-404",
+                      "reason": "billing.transaction.not.found",
+                      "message": "Billing transaction not found"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                },
+                "example": {
+                  "requestId": "taoGckL5mv",
+                  "code": "api-gateway-500",
+                  "reason": "internal.error",
+                  "message": "Unknown error",
+                  "httpStatusCode": 500,
+                  "errors": [
+                    {
+                      "code": "api-gateway-500",
+                      "reason": "internal.error",
+                      "message": "Unknown error"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "dmsTicket": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Message": {
+        "required": [
+          "code",
+          "message",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string",
+            "example": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string",
+            "example": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "example": "string"
+          }
+        }
+      },
+      "ChargersLastUsed": {
+        "required": [
+          "chargerIds"
+        ],
+        "type": "object",
+        "properties": {
+          "chargerIds": {
+            "title": "Collection of charger ids",
+            "maxItems": 20,
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "example": [
+              12,
+              58
+            ],
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        },
+        "description": "Chargers last used"
+      },
+      "EvTransactionResponse": {
+        "required": [
+          "code",
+          "count",
+          "data",
+          "httpStatusCode",
+          "message",
+          "reason",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "title": "Request id",
+            "type": "string",
+            "example": "1234567"
+          },
+          "code": {
+            "title": "Code",
+            "type": "string",
+            "example": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string",
+            "example": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "example": "string"
+          },
+          "messages": {
+            "title": "List of additional messages",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          },
+          "httpStatusCode": {
+            "title": "Http status code",
+            "type": "integer",
+            "format": "int32",
+            "example": 200
+          },
+          "count": {
+            "title": "Number of entities returned",
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "data": {
+            "title": "Entities data",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EvTransaction"
+            }
+          }
+        }
+      },
+      "ValidationResponse": {
+        "required": [
+          "code",
+          "errors",
+          "httpStatusCode",
+          "message",
+          "reason",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "title": "Request id",
+            "type": "string",
+            "example": "1234567"
+          },
+          "code": {
+            "title": "Code",
+            "type": "string",
+            "example": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string",
+            "example": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "example": "string"
+          },
+          "messages": {
+            "title": "List of additional messages",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          },
+          "httpStatusCode": {
+            "title": "Http status code",
+            "type": "integer",
+            "format": "int32",
+            "example": 400
+          },
+          "errors": {
+            "title": "List of errors",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          }
+        }
+      },
+      "FieldValidationResponse": {
+        "required": [
+          "code",
+          "errors",
+          "httpStatusCode",
+          "message",
+          "reason",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "title": "Request id",
+            "type": "string",
+            "example": "1234567"
+          },
+          "code": {
+            "title": "Code",
+            "type": "string",
+            "example": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string",
+            "example": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "example": "string"
+          },
+          "messages": {
+            "title": "List of additional messages",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          },
+          "httpStatusCode": {
+            "title": "Http status code",
+            "type": "integer",
+            "format": "int32",
+            "example": 400
+          },
+          "errors": {
+            "title": "List of errors",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FieldValidation"
+            }
+          }
+        }
+      },
+      "FieldValidation": {
+        "required": [
+          "code",
+          "field",
+          "message",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string",
+            "example": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string",
+            "example": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "example": "string"
+          },
+          "field": {
+            "title": "Field",
+            "type": "string",
+            "example": "name"
+          }
+        }
+      },
+      "BaseResponse": {
+        "required": [
+          "code",
+          "httpStatusCode",
+          "message",
+          "reason",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "title": "Request id",
+            "type": "string",
+            "example": "1234567"
+          },
+          "code": {
+            "title": "Code",
+            "type": "string",
+            "example": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string",
+            "example": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "example": "string"
+          },
+          "messages": {
+            "title": "List of additional messages",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          },
+          "httpStatusCode": {
+            "title": "Http status code",
+            "type": "integer",
+            "format": "int32",
+            "example": 200
+          }
+        }
+      },
+      "EvTransactionFilter": {
+        "required": [
+          "transactionBillingStatus"
+        ],
+        "type": "object",
+        "properties": {
+          "ids": {
+            "title": "Collection of ids",
+            "maxItems": 20,
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "example": [
+              61035,
+              61038
+            ],
+            "items": {
+              "title": "Collection of ids",
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "accountNumber": {
+            "title": "Account number",
+            "type": "integer",
+            "format": "int32",
+            "example": 10
+          },
+          "fromDate": {
+            "title": "EV Transaction from date in epoch time",
+            "type": "string",
+            "format": "date-time"
+          },
+          "toDate": {
+            "title": "EV Transaction to date in epoch time",
+            "type": "string",
+            "format": "date-time"
+          },
+          "chargerIds": {
+            "title": "Collection of charger ids",
+            "maxItems": 20,
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "example": [
+              12,
+              58
+            ],
+            "items": {
+              "title": "Collection of charger ids",
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "connectorIds": {
+            "title": "Collection of connector ids",
+            "maxItems": 20,
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "example": [
+              25462,
+              25490
+            ],
+            "items": {
+              "title": "Collection of connector ids",
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "evseId": {
+            "title": "EVSE id",
+            "type": "string",
+            "example": "US*EVG*E9*9"
+          },
+          "transactionBillingStatus": {
+            "title": "Transaction billing status",
+            "pattern": "(FINAL_COST)",
+            "type": "string",
+            "example": "FINAL_COST",
+            "enum": [
+              "FINAL_COST"
+            ]
+          }
+        },
+        "description": "Filter object to be used for searching"
+      },
+      "EvTransactionCost": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "EV transaction id",
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "currency": {
+            "title": "Currency",
+            "type": "string",
+            "example": "USD"
+          },
+          "totalTax": {
+            "title": "Total Tax",
+            "type": "number",
+            "example": 2.25
+          },
+          "total": {
+            "title": "Total amount",
+            "type": "number",
+            "example": 8.75
+          },
+          "totalForEnergy": {
+            "title": "Total for energy",
+            "type": "number",
+            "example": 1103.9
+          },
+          "totalForTime": {
+            "title": "Total for time",
+            "type": "number",
+            "example": 3
+          },
+          "totalReservationFee": {
+            "title": "Reservation fee",
+            "type": "number",
+            "example": 0
+          },
+          "totalOvertimePenalty": {
+            "title": "Total overtime penalty",
+            "type": "number",
+            "example": 0
+          },
+          "totalDiscount": {
+            "title": "Total discount",
+            "type": "number",
+            "example": 1.2
+          },
+          "totalWithDiscount": {
+            "title": "Total with discount",
+            "type": "number",
+            "example": 4.24
+          },
+          "totalTaxRate": {
+            "title": "Total tax rate",
+            "type": "number",
+            "example": 3.24
+          }
+        }
+      },
+      "ChargerStatusFilter": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "title": "Collection of ids",
+            "maxItems": 50,
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "example": [
+              1,
+              2
+            ],
+            "items": {
+              "title": "Collection of ids",
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "externalId": {
+            "title": "External id",
+            "type": "string",
+            "example": "ch-s-1"
+          },
+          "groupId": {
+            "title": "Group id",
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "siteIds": {
+            "title": "Collection of site ids",
+            "maxItems": 10,
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "example": [
+              1,
+              2
+            ],
+            "items": {
+              "title": "Collection of site ids",
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        },
+        "description": "Filter object to be used for searching"
+      },
+      "ChargerStatusResponse": {
+        "required": [
+          "code",
+          "count",
+          "data",
+          "httpStatusCode",
+          "message",
+          "reason",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "title": "Request id",
+            "type": "string",
+            "example": "1234567"
+          },
+          "code": {
+            "title": "Code",
+            "type": "string",
+            "example": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string",
+            "example": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "example": "string"
+          },
+          "messages": {
+            "title": "List of additional messages",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          },
+          "httpStatusCode": {
+            "title": "Http status code",
+            "type": "integer",
+            "format": "int32",
+            "example": 200
+          },
+          "count": {
+            "title": "Number of entities returned",
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "data": {
+            "title": "Entities data",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChargerStatus"
+            }
+          }
+        }
+      },
+      "RawOperationResponse": {
+        "required": [
+          "code",
+          "count",
+          "data",
+          "httpStatusCode",
+          "message",
+          "reason",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "title": "Request id",
+            "type": "string",
+            "example": "1234567"
+          },
+          "code": {
+            "title": "Code",
+            "type": "string",
+            "example": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string",
+            "example": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "example": "string"
+          },
+          "messages": {
+            "title": "List of additional messages",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          },
+          "httpStatusCode": {
+            "title": "Http status code",
+            "type": "integer",
+            "format": "int32",
+            "example": 200
+          },
+          "count": {
+            "title": "Number of entities returned",
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "data": {
+            "title": "Entities data",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RawOperation"
+            }
+          }
+        }
+      },
+      "StartTransactionRequest": {
+        "required": [
+          "cardId",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "cardId": {
+            "title": "Card id",
+            "type": "integer",
+            "format": "int64",
+            "example": 123123
+          },
+          "reason": {
+            "title": "Reason",
+            "pattern": "(PAY_PER_USE|NO_CARD_YET|FORGOT_CARD|COURTESY_FREE_CHARGE|CARD_DOES_NOT_WORK|ISSUE_WITH_CARD_READER|CHARGER_WONT_RELEASE_THE_HANDLE|ISSUE_WITH_CHARGER)",
+            "type": "string",
+            "example": "PAY_PER_USE",
+            "enum": [
+              "PAY_PER_USE",
+              "NO_CARD_YET",
+              "FORGOT_CARD",
+              "COURTESY_FREE_CHARGE",
+              "CARD_DOES_NOT_WORK",
+              "ISSUE_WITH_CARD_READER",
+              "CHARGER_WONT_RELEASE_THE_HANDLE",
+              "ISSUE_WITH_CHARGER"
+            ]
+          }
+        },
+        "description": "Send charging profile operation message"
+      },
+      "StopTransactionRequest": {
+        "required": [
+          "cardId",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "cardId": {
+            "title": "Card id",
+            "type": "integer",
+            "format": "int64",
+            "example": 123123
+          },
+          "reason": {
+            "title": "Reason",
+            "pattern": "(MAX_CHARGE_DURATION_REACHED|GIREVE_METER_LIMIT_REACHED|CONCURRENT_CHARGING|MAX_CHARGE_KWH_REACHED|BEFORE_RESERVATION|EMERGENCY_STOP)",
+            "type": "string",
+            "example": "MAX_CHARGE_DURATION_REACHED",
+            "enum": [
+              "MAX_CHARGE_DURATION_REACHED",
+              "GIREVE_METER_LIMIT_REACHED",
+              "CONCURRENT_CHARGING",
+              "MAX_CHARGE_KWH_REACHED",
+              "BEFORE_RESERVATION",
+              "EMERGENCY_STOP"
+            ]
+          }
+        },
+        "description": "Send charging profile operation message"
+      },
+      "EvTransaction": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "EV transaction id",
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "connectorStatus": {
+            "title": "ConnectorStatus",
+            "type": "string",
+            "description": "Specifies EV transaction connector status\n* AVAILABLE\n* CHARGING\n* FAULTED\n* UNAVAILABLE\n* NEW\n* UNKNOWN\n* RESERVED\n* DISCHARGING\n* PAUSED\n* PREPARING\n* FINISHING",
+            "example": "AVAILABLE"
+          },
+          "connectorType": {
+            "title": "Connector type",
+            "type": "string",
+            "description": "Specifies EV transaction connector type\n* TYPE_2_MENNEKES\n* TYPE_4_CHADEMO\n* TYPE_F_SCHUKO_CEE_7_4_GER\n* TYPE_E_AND_F_CEE_7_5_FRA\n* TYPE_3_SCAME\n* TYPE_COMBO_GERMANY\n* TYPE_K_SECTION_107_2_D1_DEN\n* TYPE_C_CEE7_16_EU\n* TYPE_E_CEE_7_5_FRA\n* TYPE_C_CEE_7_17_GER_FRA\n* TYPE_L_CEI_23_16_VII_ITA\n* TYPE_J_SEV_1011_CH\n* TYPE_D_BS_546_2_PIN_UK\n* TYPE_D_BS_546_3_PIN_UK\n* TYPE_G_BS_1363_IS_401_AND_411_MS_58_UK\n* TYPE_1_J1772_YAZAKI\n* SAE_J1772_COMBO_US\n* SAE_J1772_AVCON\n* TESLA_UNIVERSAL_MOBILE_CONNECTOR\n* NEMA_1_15P\n* TYPE_B_NEMA_5_15\n* TYPE_B_NEMA_5_20\n* TESLA_R\n* TESLA_S\n* TYPE_2_TETHERED",
+            "example": "TYPE_2_MENNEKES"
+          },
+          "transactionStatus": {
+            "title": "Transaction status",
+            "type": "string",
+            "description": "Specifies EV transaction status\n* STARTED\n* UPDATED\n* STOPPED\n* BILLED",
+            "example": "STARTED"
+          },
+          "transactionBillingStatus": {
+            "title": "Transaction billing status",
+            "type": "string",
+            "description": "Specifies EV transaction billing status\n* NOT_BILLABLE\n* TEMP_COST\n* FINAL_COST\n* DICTATED_COST\n* EXCEEDED_BILLING_CALC_TIME_RANGE\n* FREE_CHARGE",
+            "example": "NOT_BILLABLE"
+          },
+          "stopReason": {
+            "title": "Stop reason",
+            "type": "string",
+            "description": "Specifies EV transaction stop reason\n* EMERGENCY_STOP\n* EV_DISCONNECTED\n* HARD_RESET\n* LOCAL\n* OTHER\n* POWER_LOSS\n* REBOOT\n* REMOTE\n* SOFT_RESET\n* UNLOCK_COMMAND\n* DE_AUTHORIZED\n* ENERGY_LIMIT_REACHED\n* GROUND_FAULT\n* IMMEDIATE_RESET\n* MASTER_PASS\n* LOCAL_OUT_OF_CREDIT\n* OVERCURRENT_FAULT\n* POWER_QUALITY\n* SOC_LIMIT_REACHED\n* STOPPED_BY_EV\n* TIME_LIMIT_REACHED\n* TIMEOUT\n* MANUAL_STOP_CHARGE_BY_OPERATOR\n* CONCURRENT_CHARGING\n* BEFORE_RESERVATION",
+            "example": "EMERGENCY_STOP"
+          },
+          "corruptedReasons": {
+            "title": "Corrupted reasons",
+            "uniqueItems": true,
+            "type": "array",
+            "example": "[CORRUPTED_BY_NEGATIVE_TRANSACTIONS]",
+            "items": {
+              "title": "Corrupted reasons",
+              "type": "string",
+              "example": "[CORRUPTED_BY_NEGATIVE_TRANSACTIONS]"
+            }
+          },
+          "accountNumber": {
+            "title": "Account number",
+            "type": "integer",
+            "format": "int32",
+            "example": 156798
+          },
+          "planId": {
+            "title": "Plan id",
+            "type": "integer",
+            "format": "int64",
+            "example": 16
+          },
+          "chargePower": {
+            "title": "Charge power in kW",
+            "type": "number",
+            "format": "double",
+            "example": 50
+          },
+          "connectorId": {
+            "title": "Connector id",
+            "type": "integer",
+            "format": "int64",
+            "example": 25
+          },
+          "meterReadOnStart": {
+            "title": "Meter read on start",
+            "type": "integer",
+            "format": "int64",
+            "example": 2190
+          },
+          "meterReadOnStop": {
+            "title": "Meter read on stop",
+            "type": "integer",
+            "format": "int64",
+            "example": 6470
+          },
+          "smart": {
+            "title": "Smart",
+            "type": "boolean",
+            "example": false
+          },
+          "startedOn": {
+            "title": "Started on in epoch time",
+            "type": "integer",
+            "format": "int64",
+            "example": 1500652138
+          },
+          "stoppedOn": {
+            "title": "Stopped on in epoch time",
+            "type": "integer",
+            "format": "int64",
+            "example": 1500653279
+          },
+          "chargeTime": {
+            "title": "Charge time in epoch time",
+            "type": "integer",
+            "format": "int64",
+            "example": 1500653279
+          },
+          "chargerId": {
+            "title": "Charger id",
+            "type": "integer",
+            "format": "int64",
+            "example": 42
+          },
+          "vehicleSoc": {
+            "title": "Vehicle soc",
+            "type": "number",
+            "format": "double",
+            "example": 35
+          },
+          "planCode": {
+            "title": "Plan code",
+            "type": "string",
+            "example": "70154"
+          },
+          "billingTransactionId": {
+            "title": "Billing transaction id",
+            "type": "integer",
+            "format": "int64",
+            "example": 654620
+          },
+          "cardId": {
+            "title": "Card id",
+            "type": "integer",
+            "format": "int64",
+            "example": 245431
+          },
+          "cardNumber": {
+            "title": "Card number",
+            "type": "string",
+            "example": "043D0752674F80"
+          },
+          "billedTime": {
+            "title": "Billed time in seconds",
+            "type": "integer",
+            "format": "int64",
+            "example": 1141
+          },
+          "totalEnergy": {
+            "title": "Total energy",
+            "type": "number",
+            "format": "double",
+            "example": 6.47
+          },
+          "tariffId": {
+            "title": "Tariff id",
+            "type": "integer",
+            "format": "int64",
+            "example": 2854
+          },
+          "chargerPublicKey": {
+            "title": "Charger public key",
+            "type": "string",
+            "example": "MjM0MzI0"
+          },
+          "startMeterSignedData": {
+            "title": "Start meter signed data",
+            "type": "string"
+          },
+          "stopMeterSignedData": {
+            "title": "Stop meter signed data",
+            "type": "string"
+          },
+          "reservationId": {
+            "title": "Reservation id",
+            "type": "integer",
+            "format": "int64",
+            "example": 64955
+          },
+          "evseId": {
+            "title": "EVSE Id",
+            "type": "string",
+            "example": "US*EVG*E9*9"
+          },
+          "authorizationFailureReason": {
+            "title": "Authorization status",
+            "type": "string",
+            "example": "NOT_ACTIVATED_CARD"
+          },
+          "accepted": {
+            "title": "Accepted",
+            "type": "boolean",
+            "example": true
+          },
+          "errorInfo": {
+            "$ref": "#/components/schemas/ErrorInfo"
+          },
+          "cost": {
+            "$ref": "#/components/schemas/Cost"
+          },
+          "chargerHost": {
+            "$ref": "#/components/schemas/ChargerHost"
+          }
+        }
+      },
+      "ChargerStatus": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Charger id",
+            "type": "integer",
+            "format": "int64",
+            "example": 122345
+          },
+          "externalId": {
+            "title": "External id",
+            "type": "string",
+            "example": "a1d2f"
+          },
+          "chargerStatus": {
+            "title": "Charger status type",
+            "type": "string",
+            "description": "\n* Specifies the charger status types\n* AVAILABLE\n* OCCUPIED\n* FAULTED\n* UNAVAILABLE\n* NEW\n* UNKNOWN\n* RESERVED\n* IN_PROVISION\n* CHARGING\n* DISCHARGING\n* PAUSED\n* PREPARING\n* FINISHING",
+            "example": "AVAILABLE"
+          },
+          "temperatureScale": {
+            "title": "Temperature scale",
+            "type": "string",
+            "description": "\n* Specifies the temperature scale types\n* CELSIUS\n* FAHRENHEIT",
+            "example": "CELSIUS"
+          },
+          "errorCode": {
+            "title": "Error code",
+            "type": "string",
+            "description": "\n* Specifies the error code\n* OTHER_ERROR\n* CONNECTOR_LOCK_FAILURE\n* HIGH_TEMPERATURE\n* MODE_3_ERROR\n* NO_ERROR\n* POWER_METER_FAILURE\n* POWER_SWITCH_FAILURE\n* READER_FAILURE\n* EV_COMMUNICATION_ERROR\n* GROUND_FAILURE\n* INTERNAL_ERROR\n* LOCAL_LIST_CONFLICT\n* OVER_CURRENT_FAILURE\n* OVER_VOLTAGE\n* RESET_FAILURE\n* UNDER_VOLTAGE\n* WEAK_SIGNAL",
+            "example": "HIGH_TEMPERATURE"
+          },
+          "provisionStatus": {
+            "title": "Provision status",
+            "type": "string",
+            "description": "\n* Specifies the provision process status\n* ORDERED\n* IN_STOCK\n* READY_FOR_INSTALLATION\n* INSTALLED\n* CONNECTED\n* READY_FOR_PROVISIONING\n* PROVISIONED\n* SCHEDULED_FOR_DECOMMISSIONING\n* DECOMMISSIONED\n* DENETWORKED\n* IN_CONSTRUCTION\n* IN_INSTALLATION",
+            "example": "ORDERED"
+          },
+          "firmwareVersion": {
+            "title": "Firmware version",
+            "type": "string",
+            "example": "1.2.2 (Production)"
+          },
+          "versionCpu2": {
+            "title": "Version cpu 2",
+            "type": "string",
+            "example": "13"
+          },
+          "currentTemperature": {
+            "title": "Current temperature",
+            "type": "number",
+            "example": 36.7
+          },
+          "installationDate": {
+            "title": "Installation date in epoch time",
+            "type": "integer",
+            "format": "int64",
+            "example": 1617010000
+          },
+          "updateStatus": {
+            "title": "Update status",
+            "type": "string",
+            "description": "\n* Specifies the firmware update status\n* INACTIVE\n* PLANNED\n* PENDING\n* DOWNLOADED\n* DOWNLOAD_FAILED\n* INSTALLED\n* INSTALLATION_FAILED\n* REQUEST_TIMED_OUT\n* DOWNLOADING\n* INSTALLING\n* DOWNLOAD_SCHEDULED\n* DOWNLOAD_PAUSED\n* INSTALL_REBOOTING\n* INSTALL_SCHEDULED\n* INSTALL_VERIFICATION_FAILED\n* INVALID_SIGNATURE\n* SIGNATURE_VERIFIED\n* PUBLISH_FAILED",
+            "example": "INACTIVE"
+          },
+          "provisioningDate": {
+            "title": "Provisioning date in epoch time",
+            "type": "integer",
+            "format": "int64",
+            "example": 1617010000
+          },
+          "decommissionDate": {
+            "title": "Decommission date in epoch time",
+            "type": "integer",
+            "format": "int64",
+            "example": 1617010000
+          },
+          "groupIds": {
+            "title": "Group ids",
+            "uniqueItems": true,
+            "type": "array",
+            "description": "List of group ids that contains this charger",
+            "example": [
+              1,
+              3,
+              5
+            ],
+            "items": {
+              "title": "Group ids",
+              "type": "integer",
+              "description": "List of group ids that contains this charger",
+              "format": "int64"
+            }
+          },
+          "siteId": {
+            "title": "Site id",
+            "type": "integer",
+            "format": "int64",
+            "example": 1842
+          },
+          "evses": {
+            "title": "Evses",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Evse"
+            }
+          }
+        }
+      },
+      "RawOperation": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "title": "Response message",
+            "type": "string",
+            "example": "{\"status\":\"Accepted\"}"
+          }
+        }
+      },
+      "ErrorInfo": {
+        "title": "Error details",
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "title": "Error code",
+            "type": "string",
+            "example": "NO_ERROR"
+          },
+          "vendorErrorCode": {
+            "title": "Vendor error code",
+            "type": "string",
+            "example": "E-20"
+          },
+          "errorMessage": {
+            "title": "Error message",
+            "type": "string",
+            "example": "Error message"
+          }
+        }
+      },
+      "Cost": {
+        "title": "Cost details",
+        "type": "object",
+        "properties": {
+          "estimated": {
+            "title": "Estimated amount",
+            "type": "number",
+            "example": 6.1
+          },
+          "currency": {
+            "title": "Currency",
+            "type": "string",
+            "example": "USD"
+          },
+          "totalTax": {
+            "title": "Total Tax",
+            "type": "number",
+            "example": 2.25
+          },
+          "total": {
+            "title": "Total amount",
+            "type": "number",
+            "example": 8.75
+          }
+        }
+      },
+      "ChargerHost": {
+        "title": "Charger host",
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Charger host id",
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "name": {
+            "title": "Charger name",
+            "type": "string",
+            "example": "Antwerpen chargers"
+          }
+        }
+      },
+      "Evse": {
+        "title": "Evses",
+        "type": "object",
+        "properties": {
+          "identityKey": {
+            "title": "Identity key",
+            "type": "string",
+            "example": "2"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string",
+            "example": "US*XDC*E10*10"
+          },
+          "connectors": {
+            "title": "Connectors details",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Connector"
+            }
+          }
+        }
+      },
+      "Connector": {
+        "title": "Connectors details",
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Connector id",
+            "type": "integer",
+            "format": "int64",
+            "example": 122345
+          },
+          "identityKey": {
+            "title": "Identity key",
+            "type": "string",
+            "example": "GRDS0144"
+          },
+          "evseConnectorIdentityKey": {
+            "title": "Evse connector identity key",
+            "type": "string",
+            "example": "1"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "example": "CHADEMO"
+          },
+          "serialNumber": {
+            "title": "Serial number",
+            "type": "string",
+            "example": "A-123"
+          },
+          "legacyId": {
+            "title": "Legacy id",
+            "type": "string",
+            "example": "BC*DSA*E2*1"
+          },
+          "externalId": {
+            "title": "External id",
+            "type": "string",
+            "example": "A-ER-021"
+          },
+          "ean": {
+            "title": "Ean",
+            "type": "string",
+            "example": "1023 4566"
+          },
+          "maxCurrent": {
+            "title": "Max current",
+            "type": "number",
+            "example": 125
+          },
+          "maxPowerKw": {
+            "title": "Max power in Kw",
+            "type": "number",
+            "example": 50
+          },
+          "meterSerialNumber": {
+            "title": "Meter serial number",
+            "type": "string",
+            "example": "G-0762135"
+          },
+          "utilityMeterNumber": {
+            "title": "Utility serial number",
+            "type": "string",
+            "example": "MN-8756"
+          },
+          "ignoreStatusNotification": {
+            "title": "Ignore status notification",
+            "type": "boolean",
+            "example": false
+          },
+          "status": {
+            "title": "Connector status",
+            "type": "string",
+            "description": "\n* Specifies the connector status options\n* AVAILABLE\n* CHARGING\n* FAULTED\n* UNAVAILABLE\n* NEW\n* UNKNOWN\n* RESERVED\n* DISCHARGING\n* PAUSED\n* PREPARING\n* FINISHING",
+            "example": "AVAILABLE"
+          },
+          "reservable": {
+            "title": "Is reservable",
+            "type": "boolean",
+            "example": true
+          },
+          "revenueMargin": {
+            "title": "Revenue margin",
+            "type": "number",
+            "format": "double"
+          },
+          "teslaConnectionType": {
+            "title": "Tesla connection type",
+            "type": "string",
+            "description": "\n* Specifies the tesla connection type\n* NONE\n* ADAPTER\n* CONNECTOR",
+            "example": "ADAPTER"
+          },
+          "teslaAdapterSerialNumber": {
+            "title": "Tesla adapter serial number",
+            "type": "string",
+            "example": "TA-8675"
+          },
+          "teslaAdapterInstallationDate": {
+            "title": "Tesla adapter installation date in epoch time",
+            "type": "integer",
+            "format": "int64",
+            "example": 1640995200
+          },
+          "teslaAdapterInMaintenance": {
+            "title": "Is tesla adapter in maintenance",
+            "type": "boolean",
+            "example": false
+          },
+          "teslaHasAdapter": {
+            "title": "Tesla has adapter",
+            "type": "boolean",
+            "example": false
+          },
+          "inMaintenance": {
+            "title": "In maintenance",
+            "type": "boolean",
+            "example": false
+          },
+          "smartChargingEnabled": {
+            "title": "Smart charging enabled",
+            "type": "boolean",
+            "example": true
+          },
+          "wiredPhase": {
+            "title": "Wired phase",
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "errorCode": {
+            "title": "Error code",
+            "type": "string",
+            "description": "\n* Specifies the error code\n* OTHER_ERROR\n* CONNECTOR_LOCK_FAILURE\n* HIGH_TEMPERATURE\n* MODE_3_ERROR\n* NO_ERROR\n* POWER_METER_FAILURE\n* POWER_SWITCH_FAILURE\n* READER_FAILURE\n* EV_COMMUNICATION_ERROR\n* GROUND_FAILURE\n* INTERNAL_ERROR\n* LOCAL_LIST_CONFLICT\n* OVER_CURRENT_FAILURE\n* OVER_VOLTAGE\n* RESET_FAILURE\n* UNDER_VOLTAGE\n* WEAK_SIGNAL",
+            "example": "HIGH_TEMPERATURE"
+          },
+          "posChargingStatus": {
+            "title": "Pos charging status",
+            "type": "string",
+            "description": "\n* Specifies pos charging status\n* NONE\n* STARTING\n* CHARGING\n* STOPPING",
+            "example": "STARTING"
+          },
+          "errorMessage": {
+            "title": "Error message",
+            "type": "string",
+            "example": "error message info"
+          },
+          "placement": {
+            "title": "Placement",
+            "type": "string",
+            "description": "\n* Specifies the placement\n* NOT_SPECIFIED\n* LEFT\n* RIGHT\n* TOP\n* BOTTOM\n* CENTER\n* OTHER",
+            "example": "LEFT"
+          },
+          "ratedFrequency": {
+            "title": "Rated frequency",
+            "type": "integer",
+            "format": "int32",
+            "example": 60
+          },
+          "ratedVoltage": {
+            "title": "Rated voltage",
+            "type": "number",
+            "example": 500
+          },
+          "qrCode": {
+            "title": "QR code",
+            "type": "string",
+            "example": "https://account.driivz.com/sendCharger/?chargerIdentityKey=XXX-NRG-111625-0127&connectorIdentityKey=1"
+          },
+          "cableLength": {
+            "title": "Cable length",
+            "type": "integer",
+            "format": "int32",
+            "example": 5
+          },
+          "allowOverridePlan": {
+            "title": "Allow override plan",
+            "type": "boolean",
+            "example": true
+          },
+          "notes": {
+            "title": "Notes",
+            "type": "string",
+            "example": "Connector color is red"
+          },
+          "connectorType": {
+            "title": "Connector type",
+            "type": "string",
+            "description": "\n* Specifies the connector type\n* TYPE_2_MENNEKES\n* TYPE_4_CHADEMO\n* TYPE_F_SCHUKO_CEE_7_4_GER\n* TYPE_E_AND_F_CEE_7_5_FRA\n* TYPE_3_SCAME\n* TYPE_COMBO_GERMANY\n* TYPE_K_SECTION_107_2_D1_DEN\n* TYPE_C_CEE7_16_EU\n* TYPE_E_CEE_7_5_FRA\n* TYPE_C_CEE_7_17_GER_FRA\n* TYPE_L_CEI_23_16_VII_ITA\n* TYPE_J_SEV_1011_CH\n* TYPE_D_BS_546_2_PIN_UK\n* TYPE_D_BS_546_3_PIN_UK\n* TYPE_G_BS_1363_IS_401_AND_411_MS_58_UK\n* TYPE_1_J1772_YAZAKI\n* SAE_J1772_COMBO_US\n* SAE_J1772_AVCON\n* TESLA_UNIVERSAL_MOBILE_CONNECTOR\n* NEMA_1_15P\n* TYPE_B_NEMA_5_15\n* TYPE_B_NEMA_5_20\n* TESLA_R\n* TESLA_S\n* TYPE_2_TETHERED",
+            "example": "TYPE_2_MENNEKES"
+          },
+          "costCenter": {
+            "title": "Cost center",
+            "type": "string",
+            "example": "B-CH"
+          },
+          "signaturePublicKey": {
+            "title": "Signature public key",
+            "type": "string",
+            "example": "afe0884875c9c8fca9..."
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "dmsTicket": {
+        "type": "apiKey",
+        "name": "dmsTicket",
+        "in": "header"
+      }
+    }
+  }
+}
