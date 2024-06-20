@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://cpms.driivz.ubitricity.com:8103/api-gateway",
+      "url": "https://exampla.cpms.com/api-gateway",
       "description": "Generated server url"
     }
   ],
